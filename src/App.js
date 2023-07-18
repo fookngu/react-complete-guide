@@ -1,3 +1,4 @@
+import React from 'react'
 import Expenses from './components/Expenses'
 
 function App() {
@@ -22,9 +23,11 @@ function App() {
     },
   ];
 
-  return (
-      <Expenses items={expenses}></Expenses>
-      );
+  // return (
+  //     <Expenses items={expenses}></Expenses>
+  //     );
+  // the following line would do the same thing
+  return React.createElement(Expenses, {items: expenses})
 }
 
 export default App;
