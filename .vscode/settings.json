@@ -1,5 +1,6 @@
 {
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
-    }
+    },
+    "workbench.tree.indent": 20
 }
