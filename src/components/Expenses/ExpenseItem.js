@@ -2,8 +2,7 @@ import Card from '../UI/Card';
 import ExpenseDate from './ExpenseDate';
 import './ExpenseItem.css'
 
-
-function ExpenseItem({id, date, name, amount}) {
+const ExpenseItem = ({id, date, name, amount}) => {
     return (
     <Card className="expense-item">
       <input type='hidden' value={id}></input>
