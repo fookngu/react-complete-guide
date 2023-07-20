@@ -10,13 +10,13 @@ function App() {
       amount: "S$ 294.67",
     },
     {
-      id: 1,
+      id: 2,
       date: new Date(2023, 4, 1),
       name: "Grocery shopping",
       amount: "S$ 50",
     },
     {
-      id: 1,
+      id: 3,
       date: new Date(2023, 5, 12),
       name: "Mobile plan",
       amount: "S$ 10.00",
