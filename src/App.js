@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
-  const expenses = [
+  const initialExpenses = [
     {
       id: 1,
       date: new Date(2023, 5, 31),
@@ -23,10 +23,14 @@ function App() {
       amount: "S$ 10.00",
     },
   ];
+  const [expenses, setExpenses] = useState(initialExpenses)
+  const addOneExpense = (expense) => {
+    console.log(expense)
+  }
 
   return (
     <div>
-      <NewExpense />
+      <NewExpense onNewExpenseSubmitted={addOneExpense}/>
       <Expenses items={expenses}></Expenses>
     </div>
   );
