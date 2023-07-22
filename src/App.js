@@ -23,7 +23,7 @@ function App() {
       amount: "S$ 10.00",
     },
   ];
-  const [expenses, setExpenses] = useState(initialExpenses)
+  const [expenses] = useState(initialExpenses)
   const addOneExpense = (expense) => {
     console.log(expense)
   }
