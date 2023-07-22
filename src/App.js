@@ -1,41 +1,49 @@
-import React, { useState } from "react";
-import Expenses from "./components/Expenses/Expenses";
-import NewExpense from "./components/NewExpense/NewExpense";
+import React from 'react';
 
-function App() {
-  const initialExpenses = [
+import NewExpense from './components/NewExpense/NewExpense';
+import Expenses from './components/Expenses/Expenses';
+
+const App = () => {
+  const expenses = [
     {
-      id: 1,
-      date: new Date(2023, 5, 31),
-      name: "Car Insurance",
-      amount: "S$ 294.67",
+      id: 'e1',
+      title: 'Toilet Paper',
+      amount: 94.12,
+      date: new Date(2020, 7, 14),
+    },
+    { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
+    {
+      id: 'e3',
+      title: 'Car Insurance',
+      amount: 294.67,
+      date: new Date(2021, 2, 28),
     },
     {
-      id: 2,
-      date: new Date(2023, 4, 1),
-      name: "Grocery shopping",
-      amount: "S$ 50",
-    },
-    {
-      id: 3,
-      date: new Date(2023, 5, 12),
-      name: "Mobile plan",
-      amount: "S$ 10.00",
+      id: 'e4',
+      title: 'New Desk (Wooden)',
+      amount: 450,
+      date: new Date(2021, 5, 12),
     },
   ];
-  const [expenses] = useState(initialExpenses)
-  const addOneExpense = (expense) => {
-    console.log(expense)
-  }
+
+  const addExpenseHandler = expense => {
+    console.log('In App.js');
+    console.log(expense);
+  };
+
+  // return React.createElement(
+  //   'div',
+  //   {},
+  //   React.createElement('h2', {}, "Let's get started!"),
+  //   React.createElement(Expenses, { items: expenses })
+  // );
 
   return (
     <div>
-      <NewExpense onNewExpenseSubmitted={addOneExpense}/>
-      <Expenses items={expenses}></Expenses>
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <Expenses items={expenses} />
     </div>
   );
-  // the following line would do the same thing
-  // return React.createElement(Expenses, {items: expenses})
 }
 
 export default App;
